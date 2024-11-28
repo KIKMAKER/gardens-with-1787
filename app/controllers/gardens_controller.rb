@@ -4,5 +4,6 @@ class GardensController < ApplicationController
     # needs to be collected from the database here
     # i.e create the variables you want on the show page (app/views/gardens/show.html.erb)
     @garden = Garden.find(params[:id])
+    @plant = Plant.new
   end
 end

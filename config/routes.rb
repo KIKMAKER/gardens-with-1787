@@ -7,5 +7,11 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
-  resources :gardens, only: :show
+  resources :gardens, only: :show do
+    # makes the routes come after /gardens/:id
+    resources :plants, only: [:create]
+  end
+  # resources :plants, only: :show
 end
+# @plant = Plant.find(params[:id])
+# @plant.garden

@@ -1,2 +1,14 @@
 <h1><%= @garden.name %></h1>
-<p>Find me in app/views/gardens/show.html.erb</p>
+<h2>Add a plant</h2>
+
+<ul>
+  <% @garden.plants.each do |plant| %>
+    <li><%= plant.name %></li>
+  <% end %>
+</ul>
+
+<%= simple_form_for [@garden, @plant] do |f| %>
+  <%= f.input :name %>
+  <%= f.input :image_url %>
+  <%= f.submit %>
+<% end %>
